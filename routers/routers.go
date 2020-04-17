@@ -1,19 +1,20 @@
 package routers
 
 import (
-	"gin-login/controllers"
+	"gin-blog/controllers"
+
 	"github.com/gin-gonic/gin"
 )
 
-func SetupRouter()  {
+func SetupRouter() {
 	r := gin.Default()
 	v1 := r.Group("/v1")
 	{
-		v1.GET("book", controllers.GetAllBook)
-		v1.POST("book", controllers.AddNewBook)
-		v1.GET("book/:id", controllers.GetOneBook)
-		v1.PUT("book/:id", controllers.PutOneBook)
-		v1.DELETE("book/:id", controllers.DeleteBook)
+		v1.GET("post", controllers.GetAllPost)
+		v1.POST("post", controllers.AddNewPost)
+		v1.GET("post/:id", controllers.GetOnePost)
+		v1.PUT("post/:id", controllers.PutOnePost)
+		v1.DELETE("post/:id", controllers.DeletePost)
 	}
 	r.Run()
 	//return v1
